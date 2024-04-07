@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 from random_walk import RandomWalk
 
 while True:
-    rw = RandomWalk()
+    rw = RandomWalk(50000)
     rw.fill_walk()
 
     plt.style.use('classic')
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(10, 6), dpi=128)
     point_numbers = range(rw.num_points)
     ax.scatter(
         rw.x_values, 
@@ -15,7 +15,7 @@ while True:
         c=point_numbers, 
         cmap=plt.cm.Blues, 
         edgecolors='none', 
-        s=15
+        s=1
     )
 
     ax.scatter(
